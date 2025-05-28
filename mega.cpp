@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <shared.h>
 
-void setup() {}
+void setup() {
+}
 
 void loop() {}
