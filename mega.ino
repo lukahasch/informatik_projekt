@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include <shared.h>
+#include <shared.hpp>
 
 void setup() {
 }
