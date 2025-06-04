@@ -1,0 +1,2 @@
+- refactor shared into shared.hpp for proper headers
+- refactor shared.cpp for actual proper write/read
