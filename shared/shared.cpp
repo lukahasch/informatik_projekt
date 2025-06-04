@@ -10,8 +10,7 @@ public:
 
 class Message {
 public:
-    int type;
-    union Content {
-        int OpenMenu; // = 1
+    enum Content {
+        OpenMenu
     } content;
 };
