@@ -1,4 +1,37 @@
 #include <functional>
+/* Bibliotheken einbinden */
+#include <SPI.h>
+#include <Wire.h>
+/*
+#include <Adafruit_GFX.h>
+#include <Adafruit_ST7735.h>
+*/
+
+/* Deklaration Pins */
+#define CS 10   //Pin 10
+#define RES 8   //Pin 8
+#define RS 9    //Pin 9
+#define SCK 13  //Pin 13
+#define SDA 11  //Pin 11
+
+/* Deklaration tft */
+Adafruit_ST7735 tft = nullptr;
+
+/* Deklaration Farben */
+const uint16_t Black = 0x0000;
+const uint16_t Blue = 0x001F;
+const uint16_t Red = 0xF800;
+const uint16_t Green = 0x07E0;
+const uint16_t Cyan = 0x07FF;
+const uint16_t Magenta = 0xF81F;
+const uint16_t Yellow = 0xFFE0;
+const uint16_t White = 0xFFFF;
+
+void displayInit() {
+  tft.initR(INITR_BLACKTAB); // Initialize ST7735 with black tab
+  tft.fillScreen(Black);      // Fill the screen with black color
+  tft.setRotation(1);         // Set rotation (0-3)
+}
 
 void setPixel(int x, int y, int color) {
   // This function sets a pixel at (x, y) to the specified color.

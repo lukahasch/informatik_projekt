@@ -129,7 +129,7 @@ void mega(std::function<Message::Data::GameMessage()> &read) {
 
         PongMessage pongMsg = PongMessage::pongDown(msg.playerId);
 
-        Message(pongMsg).send();
+        Message(pongMsg, 0).send();
     }
 }
 
