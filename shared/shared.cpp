@@ -6,6 +6,7 @@ void setPixel(int x, int y, int color) {
   // display library used.
 }
 
+
 class PlayerClass {
 public:
   int id = 0;
@@ -26,6 +27,8 @@ public:
     Data() : nothing(0) {}
   } data;
 
+  template<typename T> Message(T) = delete; // Prevent template instantiation
+
   Message(Type t) : type(t) {
     switch (type) {
     case Type::OpenMenu:
@@ -42,8 +45,15 @@ public:
     data.gameMessage = gm;
   }
 
+  static Message recv() {
+    throw std::runtime_error("Message::recv() not implemented");
+  }
+
+  void send() {
+    throw std::runtime_error("Message::send() not implemented");
+  }
+
   static Message read(const std::function<int(int, int *)> &read) {
-    // Read the message type
     int type_val;
     read(1, &type_val);
     Type msg_type = static_cast<Type>(type_val);
