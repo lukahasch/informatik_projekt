@@ -3,7 +3,6 @@ void setPixel(int x, int y, int color) {
     // The implementation is not provided here, as it depends on the specific display library used.
 }
 
-
 class PlayerClass {
 public:
     int id;
@@ -54,10 +53,7 @@ public:
         switch (msg_type) {
             case OpenMenu:
             case CloseMenu: {
-                int menu_val;
-                read(1, &menu_val);
                 Message msg(msg_type);
-                msg.data.nothing = menu_val;
                 return msg;
             }
             case GameMessage: {
